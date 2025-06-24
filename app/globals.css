@@ -2,7 +2,8 @@
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
-/* CSS Reset (normalize + custom) */
+
+/* -------- RESET & BASE -------- */
 *,
 *::before,
 *::after {
@@ -15,6 +16,9 @@ html,
 body {
   height: 100%;
   line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,6 +46,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* -------- THEME VARIABLES -------- */
 :root {
   --font-main: "Inter", sans-serif;
   --bg: #f4f6f8;
@@ -52,52 +58,27 @@ a {
   --hover-scale: 1.03;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-main);
-  background: var(--bg);
-  color: var(--text);
+/* -------- LAYOUT -------- */
+.layout {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-.header {
-  background-color: var(--accent);
-  padding: 1rem;
-}
-
-.nav {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.nav a:hover {
-  text-decoration: underline;
-}
-
 .content {
-  padding: 2rem;
+  flex: 1 0 auto;
 }
 
 .footer {
-  text-align: center;
+  margin-top: auto;
   padding: 1rem;
   background-color: #eaecee;
+  text-align: center;
   font-size: 0.9rem;
-  margin-top: 2rem;
   color: #555;
 }
 
-/* Swiper стилі */
+/* -------- SWIPER OVERRIDES -------- */
 .swiper-slide {
   background: var(--card-bg);
   border-radius: 12px;
@@ -112,25 +93,7 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.team-heading {
-  text-align: center;
-  color: var(--accent);
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.team-photo {
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  transition: transform 0.4s ease;
-  object-fit: cover;
-}
-
-.team-photo:hover {
-  transform: rotate(1deg) scale(1.05);
-}
-
-/* Анімація */
+/* -------- ANIMATION -------- */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -143,29 +106,8 @@ body {
     transform: none;
   }
 }
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-.header {
-  background-color: var(--accent);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.footer {
-  margin-top: auto;
-  padding: 1rem;
-  background-color: #eaecee;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #555;
-}
-
+/* -------- RESPONSIVE -------- */
 @media (max-width: 480px) {
   .content {
     padding: 1rem;
@@ -173,6 +115,7 @@ body {
     margin: auto;
   }
 }
+
 @media (min-width: 481px) and (max-width: 1024px) {
   .content {
     padding: 1.5rem;
@@ -180,6 +123,7 @@ body {
     margin: auto;
   }
 }
+
 @media (min-width: 1025px) {
   .content {
     padding: 2rem 3rem;
