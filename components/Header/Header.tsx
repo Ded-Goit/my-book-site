@@ -8,15 +8,10 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* Показується завжди */}
         <Link href="/" className={styles.logo}>
           Зроби це зараз
         </Link>
-
-        {/* Бургер меню завжди на мобайлі */}
         <MobileMenu />
-
-        {/* Навігація тільки для десктопу */}
         <nav className={styles.desktopNav}>
           <Link href="/about">Про книгу</Link>
           <Link href="/methods">Методи</Link>

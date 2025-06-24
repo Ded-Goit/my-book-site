@@ -25,7 +25,6 @@ export default function MobileMenu() {
       <button className={styles.burger} onClick={() => setOpen(true)}>
         ☰
       </button>
-
       {open && (
         <div className={styles.overlay}>
           <button className={styles.close} onClick={() => setOpen(false)}>

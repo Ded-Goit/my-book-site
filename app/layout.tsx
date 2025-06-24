@@ -1,6 +1,6 @@
 import "./globals.css";
-import Link from "next/link";
 import type { Metadata } from "next";
+import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Зроби це зараз — Брайан Трейсі",
@@ -30,18 +30,7 @@ export default function RootLayout({
     <html lang="uk">
       <body>
         <div className="layout">
-          <header className="header">
-            <nav className="nav">
-              <Link href="/">Головна</Link>
-              <Link href="/about">Про книгу</Link>
-              <Link href="/methods">Методи</Link>
-              <Link href="/quotes">Цитати</Link>
-              <Link href="/tools">Інструменти</Link>
-              <Link href="/checklist">Чек‑лист</Link>
-              <Link href="/team">Наша команда</Link>
-              <Link href="/resources">Ресурси</Link>
-            </nav>
-          </header>
+          <Header />
           <main className="content">{children}</main>
           <footer className="footer">
             <p>
