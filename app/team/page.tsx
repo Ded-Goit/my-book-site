@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./page.module.css";
-import { useEffect, useRef } from "react";
+import styles from "./team.module.css";
+import { useEffect, useRef, useState } from "react";
 
 const team = [
   {
@@ -27,11 +27,18 @@ const team = [
     role: "Текст і оптимізація",
   },
   {
-    name: "Марія Петренко",
-    age: 25,
-    interests: "Контент, SEO",
+    name: "Ірина Василевська",
+    age: 28,
+    interests: "UX-дизайн, дослідження",
     photo: "/image.png",
-    role: "Текст і оптимізація",
+    role: "Дизайн сайту, концепт",
+  },
+  {
+    name: "Олександр Коваленко",
+    age: 32,
+    interests: "Next.js, DevOps",
+    photo: "/image.png",
+    role: "Розробка та інфраструктура",
   },
   {
     name: "Марія Петренко",
@@ -41,48 +48,40 @@ const team = [
     role: "Текст і оптимізація",
   },
   {
-    name: "Марія Петренко",
-    age: 25,
-    interests: "Контент, SEO",
+    name: "Ірина Василевська",
+    age: 28,
+    interests: "UX-дизайн, дослідження",
     photo: "/image.png",
-    role: "Текст і оптимізація",
+    role: "Дизайн сайту, концепт",
   },
   {
-    name: "Марія Петренко",
-    age: 25,
-    interests: "Контент, SEO",
+    name: "Олександр Коваленко",
+    age: 32,
+    interests: "Next.js, DevOps",
     photo: "/image.png",
-    role: "Текст і оптимізація",
-  },
-  {
-    name: "Марія Петренко",
-    age: 25,
-    interests: "Контент, SEO",
-    photo: "/image.png",
-    role: "Текст і оптимізація",
+    role: "Розробка та інфраструктура",
   },
 ];
 
 export default function TeamPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const card = container.children[index] as HTMLElement;
+    container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+    setActiveIndex(index);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!scrollRef.current) return;
-      const container = scrollRef.current;
-      container.scrollBy({ left: 320, behavior: "smooth" });
-
-      // якщо досягнуто кінця — повернутись на початок
-      if (
-        container.scrollLeft + container.clientWidth >=
-        container.scrollWidth - 5
-      ) {
-        container.scrollTo({ left: 0, behavior: "smooth" });
-      }
-    }, 3500); // кожні 3.5 сек
-
+      const nextIndex = (activeIndex + 1) % team.length;
+      scrollToIndex(nextIndex);
+    }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex]);
 
   return (
     <section className={styles.wrapper}>
@@ -111,6 +110,17 @@ export default function TeamPage() {
               <strong>Роль:</strong> {member.role}
             </p>
           </div>
+        ))}
+      </div>
+      <div className={styles.indicators}>
+        {team.map((_, i) => (
+          <span
+            key={i}
+            className={`${styles.dot} ${
+              activeIndex === i ? styles.active : ""
+            }`}
+            onClick={() => scrollToIndex(i)}
+          ></span>
         ))}
       </div>
     </section>
