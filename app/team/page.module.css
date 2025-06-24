@@ -1,0 +1,71 @@
+.wrapper {
+  padding: 2rem 1rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+/* Основна сітка (мобайл: свайп, планшет+десктоп: грід) */
+.teamGrid {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.teamGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  scroll-snap-align: start;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  min-width: 280px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out both;
+  animation-delay: calc(var(--index) * 100ms);
+}
+
+.photo {
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+    overflow: visible;
+    grid-auto-flow: unset;
+  }
+}
+
+@media (min-width: 1200px) {
+  .teamGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

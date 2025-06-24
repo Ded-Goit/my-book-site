@@ -1,59 +1,105 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import styles from "./page.module.css";
+import { useEffect, useRef } from "react";
 
 const team = [
   {
     name: "Ірина Василевська",
     age: 28,
-    interests: "UX‑дизайн, дослідження, скетчі",
+    interests: "UX-дизайн, дослідження",
     photo: "/image.png",
-    role: "Дизайн сайта, концепт і структура",
+    role: "Дизайн сайту, концепт",
   },
   {
     name: "Олександр Коваленко",
     age: 32,
-    interests: "Next.js, DevOps, CI/CD",
+    interests: "Next.js, DevOps",
     photo: "/image.png",
-    role: "Розробка компонентів, налаштування хостингу",
+    role: "Розробка та інфраструктура",
   },
   {
     name: "Марія Петренко",
     age: 25,
-    interests: "Контент, SEO, редагування",
+    interests: "Контент, SEO",
     photo: "/image.png",
-    role: "Підготовка текстів і SEO-оптимізація",
+    role: "Текст і оптимізація",
+  },
+  {
+    name: "Марія Петренко",
+    age: 25,
+    interests: "Контент, SEO",
+    photo: "/image.png",
+    role: "Текст і оптимізація",
+  },
+  {
+    name: "Марія Петренко",
+    age: 25,
+    interests: "Контент, SEO",
+    photo: "/image.png",
+    role: "Текст і оптимізація",
+  },
+  {
+    name: "Марія Петренко",
+    age: 25,
+    interests: "Контент, SEO",
+    photo: "/image.png",
+    role: "Текст і оптимізація",
+  },
+  {
+    name: "Марія Петренко",
+    age: 25,
+    interests: "Контент, SEO",
+    photo: "/image.png",
+    role: "Текст і оптимізація",
+  },
+  {
+    name: "Марія Петренко",
+    age: 25,
+    interests: "Контент, SEO",
+    photo: "/image.png",
+    role: "Текст і оптимізація",
   },
 ];
 
 export default function TeamPage() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!scrollRef.current) return;
+      const container = scrollRef.current;
+      container.scrollBy({ left: 320, behavior: "smooth" });
+
+      // якщо досягнуто кінця — повернутись на початок
+      if (
+        container.scrollLeft + container.clientWidth >=
+        container.scrollWidth - 5
+      ) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    }, 3500); // кожні 3.5 сек
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section>
-      <h1 className="team-heading">Наша команда</h1>
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-        spaceBetween={30}
-        breakpoints={{
-          320: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-      >
-        {team.map((member, idx) => (
-          <SwiperSlide key={idx} className="fade-in">
+    <section className={styles.wrapper}>
+      <h1 className={styles.heading}>Наша команда</h1>
+      <div className={styles.teamGrid} ref={scrollRef}>
+        {team.map((member, i) => (
+          <div
+            key={i}
+            className={styles.card}
+            style={{ "--index": i } as React.CSSProperties}
+          >
             <Image
               src={member.photo}
               alt={member.name}
-              width={150}
-              height={150}
-              className="team-photo"
+              width={140}
+              height={140}
+              className={styles.photo}
             />
             <h3>
               {member.name}, {member.age}
@@ -64,9 +110,9 @@ export default function TeamPage() {
             <p>
               <strong>Роль:</strong> {member.role}
             </p>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </section>
   );
 }
