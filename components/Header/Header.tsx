@@ -1,28 +1,42 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import "./Header.module.css"; // модуль можна винести окремо
+import { usePathname } from "next/navigation";
+import MobileMenu from "@/components/MobileMenu/MobileMenu";
+import styles from "./Header.module.css";
+
+const links = [
+  { href: "/", label: "Головна" },
+  { href: "/about", label: "Про книгу" },
+  { href: "/methods", label: "Методи" },
+  { href: "/quotes", label: "Цитати" },
+  { href: "/tools", label: "Інструменти" },
+  { href: "/checklist", label: "Чек‑лист" },
+  { href: "/team", label: "Команда" },
+  { href: "/resources", label: "Ресурси" },
+];
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="header">
-      <div className="nav-container">
-        <h1 className="logo">Зроби це зараз</h1>
-        <button className="burger" onClick={() => setOpen(!open)}>
-          ☰
-        </button>
-        <nav className={`nav ${open ? "open" : ""}`}>
-          <Link href="/">Головна</Link>
-          <Link href="/about">Про книгу</Link>
-          <Link href="/methods">Методи</Link>
-          <Link href="/quotes">Цитати</Link>
-          <Link href="/tools">Інструменти</Link>
-          <Link href="/checklist">Чек‑лист</Link>
-          <Link href="/team">Команда</Link>
-          <Link href="/resources">Ресурси</Link>
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <h1 className={styles.logo}>Зроби це зараз</h1>
+        <MobileMenu />
+
+        <nav className={styles.desktopNav}>
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`${styles.link} ${
+                pathname === href ? styles.active : ""
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
