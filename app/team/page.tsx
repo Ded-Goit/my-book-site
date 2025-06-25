@@ -6,60 +6,60 @@ import { useEffect, useRef, useState } from "react";
 
 const team = [
   {
-    name: "Ірина Василевська",
-    age: 28,
-    interests: "UX-дизайн, дослідження",
-    photo: "/image.png",
-    role: "Дизайн сайту, концепт",
+    name: "Vitalii Korolkov",
+    age: 18,
+    interests: "??????????",
+    photo: "/team/vitalii_korolkov.jpeg",
+    hobby: "???????????????",
   },
   {
-    name: "Олександр Коваленко",
-    age: 32,
-    interests: "Next.js, DevOps",
-    photo: "/image.png",
-    role: "Розробка та інфраструктура",
+    name: "Inessa",
+    age: 18,
+    interests: "??????????",
+    photo: "/team/inessa.jpeg",
+    hobby: "???????????????",
   },
   {
-    name: "Марія Петренко",
-    age: 25,
-    interests: "Контент, SEO",
-    photo: "/image.png",
-    role: "Текст і оптимізація",
+    name: "Tetiana Lvova",
+    age: 18,
+    interests: "??????????",
+    photo: "/team/tetiana_lvova.jpeg",
+    hobby: "???????????????",
   },
   {
-    name: "Ірина Василевська",
-    age: 28,
-    interests: "UX-дизайн, дослідження",
-    photo: "/image.png",
-    role: "Дизайн сайту, концепт",
+    name: "DED",
+    age: 53,
+    interests: "??????????",
+    photo: "/team/DEDda.webp",
+    hobby: "???????????????",
   },
   {
-    name: "Олександр Коваленко",
-    age: 32,
-    interests: "Next.js, DevOps",
-    photo: "/image.png",
-    role: "Розробка та інфраструктура",
+    name: "Vitalii Korolkov",
+    age: 18,
+    interests: "??????????",
+    photo: "/team/vitalii_korolkov.jpeg",
+    hobby: "???????????????",
   },
   {
-    name: "Марія Петренко",
-    age: 25,
-    interests: "Контент, SEO",
-    photo: "/image.png",
-    role: "Текст і оптимізація",
+    name: "Vitalii Korolkov",
+    age: 18,
+    interests: "??????????",
+    photo: "/team/vitalii_korolkov.jpeg",
+    hobby: "???????????????",
   },
   {
-    name: "Ірина Василевська",
-    age: 28,
-    interests: "UX-дизайн, дослідження",
-    photo: "/image.png",
-    role: "Дизайн сайту, концепт",
+    name: "Vitalii Korolkov",
+    age: 18,
+    interests: "??????????",
+    photo: "/team/vitalii_korolkov.jpeg",
+    hobby: "???????????????",
   },
   {
-    name: "Олександр Коваленко",
-    age: 32,
-    interests: "Next.js, DevOps",
-    photo: "/image.png",
-    role: "Розробка та інфраструктура",
+    name: "Vitalii Korolkov",
+    age: 18,
+    interests: "??????????",
+    photo: "/team/vitalii_korolkov.jpeg",
+    hobby: "???????????????",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function TeamPage() {
               <strong>Інтереси:</strong> {member.interests}
             </p>
             <p>
-              <strong>Роль:</strong> {member.role}
+              <strong>Хобі:</strong> {member.hobby}
             </p>
           </div>
         ))}
