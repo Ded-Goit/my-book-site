@@ -152,7 +152,7 @@ export default function TeamPage() {
     const interval = setInterval(() => {
       const nextIndex = (activeIndex + 1) % team.length;
       scrollToIndex(nextIndex);
-    }, 4000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [activeIndex]);
 

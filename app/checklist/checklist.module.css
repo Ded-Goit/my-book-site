@@ -20,7 +20,7 @@
   height: 24px;
   margin-bottom: 1.5rem;
   position: sticky; /* робимо фіксованим у межах секції */
-  top: 64px; /* висота хедера + відступ */
+  top: 84px; /* висота хедера + відступ */
   z-index: 10;
   overflow: hidden;
 }
@@ -168,5 +168,8 @@
 @media (min-width: 1201px) {
   .wrapper {
     padding: 2rem 4rem;
+  }
+  .progressContainer {
+    top: 72px; /* висота хедера + відступ */
   }
 }
