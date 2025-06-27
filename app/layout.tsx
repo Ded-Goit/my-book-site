@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Зроби це зараз — Брайан Трейсі",
     description: "21 метод подолання прокрастинації",
     type: "website",
-    locale: "uk_UA",
+    locale: "en",
   },
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uk">
+    <html lang="en">
       <body>
         <div className="layout">
           <Header />

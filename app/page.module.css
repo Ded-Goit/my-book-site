@@ -1,11 +1,12 @@
 .main {
-  padding: 2rem;
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f5f7fa;
+  padding: 2rem 1rem;
+  font-family: var(--font-main);
+  background-color: var(--bg);
 }
 
 .heading {
-  color: #2c3e50;
+  color: var(--accent);
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  text-align: center;
 }

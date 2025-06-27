@@ -25,6 +25,9 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* щоб соцмережі були внизу */
   flex: 0 0 100%;
   scroll-snap-align: center;
   background: var(--card-bg);
@@ -36,6 +39,11 @@
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease-out both;
   animation-delay: calc(var(--index) * 100ms);
+}
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .photo {
@@ -84,6 +92,9 @@
   .card {
     flex: unset;
   }
+  .indicators {
+    display: none;
+  }
 }
 
 /* Desktop */
@@ -91,4 +102,30 @@
   .teamGrid {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+/*icon*/
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.socialButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: white;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.socialButton:hover {
+  background-color: var(--accent-hover, #555);
+  transform: scale(1.1);
 }

@@ -3,14 +3,30 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
+import {
+  RiLinkedinFill,
+  RiTelegramFill,
+  RiYoutubeFill,
+  RiInstagramFill,
+  RiFacebookFill,
+  RiTwitterXFill,
+} from "react-icons/ri";
 
 const team = [
   {
     name: "Vitalii Korolkov",
-    age: 18,
-    interests: "??????????",
-    photo: "/team/vitalii_korolkov.jpeg",
-    hobby: "???????????????",
+    age: 34,
+    interests: "To develop, to learn new things",
+    photo: "/team/vitalii_korolkov.webp",
+    hobby: "I love saunas and bike rides.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/vitalii-korolkov-1ab800339/",
+      telegram: "https://web.telegram.org/a/#330808029",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
   {
     name: "Inessa",
@@ -18,6 +34,14 @@ const team = [
     interests: "??????????",
     photo: "/team/inessa.jpeg",
     hobby: "???????????????",
+    socials: {
+      linkedin: "https://linkedin.com/",
+      telegram: "https://t.me/",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
   {
     name: "Tetiana Lvova",
@@ -25,41 +49,89 @@ const team = [
     interests: "??????????",
     photo: "/team/tetiana_lvova.jpeg",
     hobby: "???????????????",
+    socials: {
+      linkedin: "https://linkedin.com/",
+      telegram: "https://t.me/",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
   {
     name: "DED",
     age: 53,
-    interests: "??????????",
+    interests: "Immersion in IT",
     photo: "/team/DEDda.webp",
-    hobby: "???????????????",
+    hobby: "Working in your garden, coding",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/andrii-ded-romanov/",
+      telegram: "https://web.telegram.org/a/#1078273912",
+      youtube: "http://www.youtube.com/@DED_8_8_8_8_8",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
   {
-    name: "Vitalii Korolkov",
+    name: "student",
     age: 18,
     interests: "??????????",
-    photo: "/team/vitalii_korolkov.jpeg",
+    photo: "/team/image.png",
     hobby: "???????????????",
+    socials: {
+      linkedin: "https://linkedin.com/",
+      telegram: "https://t.me/",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
   {
-    name: "Vitalii Korolkov",
+    name: "student",
     age: 18,
     interests: "??????????",
-    photo: "/team/vitalii_korolkov.jpeg",
+    photo: "/team/image.png",
     hobby: "???????????????",
+    socials: {
+      linkedin: "https://linkedin.com/",
+      telegram: "https://t.me/",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
   {
-    name: "Vitalii Korolkov",
+    name: "student",
     age: 18,
     interests: "??????????",
-    photo: "/team/vitalii_korolkov.jpeg",
+    photo: "/team/image.png",
     hobby: "???????????????",
+    socials: {
+      linkedin: "https://linkedin.com/",
+      telegram: "https://t.me/",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
   {
-    name: "Vitalii Korolkov",
+    name: "student",
     age: 18,
     interests: "??????????",
-    photo: "/team/vitalii_korolkov.jpeg",
+    photo: "/team/image.png",
     hobby: "???????????????",
+    socials: {
+      linkedin: "https://linkedin.com/",
+      telegram: "https://t.me/",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
   },
 ];
 
@@ -85,7 +157,9 @@ export default function TeamPage() {
 
   return (
     <section className={styles.wrapper}>
-      <h1 className={styles.heading}>Наша команда</h1>
+      <h1 className={styles.heading}>Our team</h1>
+      <h2 className={styles.heading}>Slogan:</h2>
+      <h3 className={styles.heading}>Description:</h3>
       <div className={styles.teamGrid} ref={scrollRef}>
         {team.map((member, i) => (
           <div
@@ -93,22 +167,87 @@ export default function TeamPage() {
             className={styles.card}
             style={{ "--index": i } as React.CSSProperties}
           >
-            <Image
-              src={member.photo}
-              alt={member.name}
-              width={140}
-              height={140}
-              className={styles.photo}
-            />
-            <h3>
-              {member.name}, {member.age}
-            </h3>
-            <p>
-              <strong>Інтереси:</strong> {member.interests}
-            </p>
-            <p>
-              <strong>Хобі:</strong> {member.hobby}
-            </p>
+            <div className={styles.cardContent}>
+              <Image
+                src={member.photo}
+                alt={member.name}
+                width={140}
+                height={140}
+                className={styles.photo}
+                priority={i === 0}
+              />
+              <h3>
+                {member.name}, {member.age}
+              </h3>
+              <p>
+                <strong>Interests:</strong> {member.interests}
+              </p>
+              <p>
+                <strong>Hobby:</strong> {member.hobby}
+              </p>
+            </div>
+            <div className={styles.socials}>
+              {member.socials?.linkedin && (
+                <a
+                  href={member.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialButton}
+                >
+                  <RiLinkedinFill />
+                </a>
+              )}
+              {member.socials?.telegram && (
+                <a
+                  href={member.socials.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialButton}
+                >
+                  <RiTelegramFill />
+                </a>
+              )}
+              {member.socials?.youtube && (
+                <a
+                  href={member.socials.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialButton}
+                >
+                  <RiYoutubeFill />
+                </a>
+              )}
+              {member.socials?.instagram && (
+                <a
+                  href={member.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialButton}
+                >
+                  <RiInstagramFill />
+                </a>
+              )}
+              {member.socials?.facebook && (
+                <a
+                  href={member.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialButton}
+                >
+                  <RiFacebookFill />
+                </a>
+              )}
+              {member.socials?.twitter && (
+                <a
+                  href={member.socials.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialButton}
+                >
+                  <RiTwitterXFill />
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>

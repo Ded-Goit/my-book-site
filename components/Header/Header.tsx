@@ -18,7 +18,7 @@ export default function Header() {
           <Link href="/quotes">Цитати</Link>
           <Link href="/tools">Інструменти</Link>
           <Link href="/checklist">Чек‑лист</Link>
-          <Link href="/team">Команда</Link>
+          <Link href="/team">Team</Link>
           <Link href="/resources">Ресурси</Link>
         </nav>
       </div>
