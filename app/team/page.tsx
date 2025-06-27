@@ -30,10 +30,10 @@ const team = [
   },
   {
     name: "Inessa",
-    age: 18,
-    interests: "??????????",
+    age: 30,
+    interests: "Linguistics. Study of foreign languages",
     photo: "/team/inessa.jpeg",
-    hobby: "???????????????",
+    hobby: "Travel. Reading books, interesting texts and materials. Sports.",
     socials: {
       linkedin: "https://linkedin.com/",
       telegram: "https://t.me/",

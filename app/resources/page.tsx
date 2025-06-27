@@ -24,6 +24,15 @@ export default function ResourcesPage() {
             and relax.
           </a>
         </li>
+        <li>
+          <a
+            href="https://screenapp.io/blog/seinfeld-strategy-complete-guide/"
+            target="_blank"
+          >
+            ``Seinfeld Strategy`` (Don`t Break the Chain) Calendar and daily
+            execution → draw a cross every day → don`t break the chain.
+          </a>
+        </li>
       </ul>
     </section>
   );

@@ -11,7 +11,7 @@ const links = [
   { href: "/methods", label: "Методи" },
   { href: "/quotes", label: "Цитати" },
   { href: "/tools", label: "Інструменти" },
-  { href: "/checklist", label: "Чек‑лист" },
+  { href: "/checklist", label: "Check-List" },
   { href: "/team", label: "Team" },
   { href: "/resources", label: "Ресурси" },
 ];
