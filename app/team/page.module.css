@@ -34,7 +34,7 @@
   flex: 0 0 100%;
   scroll-snap-align: center;
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 80px;
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 12px var(--card-shadow);
@@ -58,7 +58,6 @@
   display: block;
   margin: 0 auto 1rem auto;
   border-radius: 50%;
-  border: 3px solid var(--accent);
   object-fit: cover;
 }
 
