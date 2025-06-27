@@ -18,26 +18,26 @@ import styles from "./tools.module.css";
 export default function ToolsPage() {
   const tools = [
     {
-      title: "Матриця пріоритетів (важливе/термінове)",
+      title: "Priority matrix (important/urgent)",
       link: "https://experience.dropbox.com/uk-ua/resources/eisenhower-matrix",
     },
     {
-      title: "Таймер Помодоро",
+      title: "Pomodoro Timer",
       link: "https://pomodoro-tracker.com/?lang=en",
     },
     {
-      title: "Щоденне планування вечором",
+      title: "Daily planning in the evening",
       link: "https://www.microsoft.com/uk-ua/microsoft-365/microsoft-to-do-list-app",
     },
     {
-      title: "Правило 80/20",
+      title: "The 80/20 rule",
       link: "https://asana.com/resources/pareto-principle-80-20-rule",
     },
   ];
 
   return (
     <section className={styles.wrapper}>
-      <h1 className={styles.heading}>Additional Resources</h1>
+      <h1 className={styles.heading}>Tools</h1>
       <div className={styles.grid}>
         {tools.map((res, idx) => (
           <a

@@ -10,7 +10,7 @@ const links = [
   { href: "/about", label: "Про книгу" },
   { href: "/methods", label: "Методи" },
   { href: "/quotes", label: "Цитати" },
-  { href: "/tools", label: "Інструменти" },
+  { href: "/tools", label: "Tools" },
   { href: "/checklist", label: "Check-List" },
   { href: "/team", label: "Team" },
   { href: "/resources", label: "Resources" },
