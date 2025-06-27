@@ -19,7 +19,9 @@
   border-radius: 6px;
   height: 24px;
   margin-bottom: 1.5rem;
-  position: relative;
+  position: sticky; /* робимо фіксованим у межах секції */
+  top: 64px; /* висота хедера + відступ */
+  z-index: 10;
   overflow: hidden;
 }
 
