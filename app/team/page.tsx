@@ -134,11 +134,12 @@ const team = [
     },
   },
 ];
-
 export default function TeamPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Автоскрол
   const scrollToIndex = (index: number) => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
@@ -155,6 +156,21 @@ export default function TeamPage() {
     return () => clearInterval(interval);
   }, [activeIndex]);
 
+  // Паралакс при скролі
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          const speed = 0.1 + index * 0.02;
+          card.style.transform = `translateY(${scrollY * speed}px)`;
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className={styles.wrapper}>
       <h1 className={styles.heading}>Our team</h1>
@@ -164,8 +180,25 @@ export default function TeamPage() {
         {team.map((member, i) => (
           <div
             key={i}
+            ref={(el) => {
+              cardsRef.current[i] = el;
+            }}
             className={styles.card}
             style={{ "--index": i } as React.CSSProperties}
+            // 3D-поворот при русі миші
+            onMouseMove={(e) => {
+              const card = e.currentTarget;
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const rotateX = -(y / rect.height - 0.5) * 10;
+              const rotateY = (x / rect.width - 0.5) * 10;
+              card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            }}
+            onMouseLeave={(e) => {
+              const card = e.currentTarget;
+              card.style.transform = "rotateX(0) rotateY(0)";
+            }}
           >
             <div className={styles.cardContent}>
               <Image

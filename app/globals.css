@@ -4,6 +4,17 @@
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 
+/* -------- THEME VARIABLES -------- */
+:root {
+  --font-main: "Inter", sans-serif;
+  --bg: #f4f6f8;
+  --text: #1c1f23;
+  --accent: #2c3e50;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --hover-scale: 1.03;
+}
+
 /* -------- RESET & BASE -------- */
 *,
 *::before,
@@ -16,10 +27,10 @@
 html,
 body {
   height: 100%;
-  line-height: 1.5;
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
+  font-family: var(--font-main);
+  background-color: var(--bg);
   color: var(--text);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -46,17 +57,6 @@ textarea {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-/* -------- THEME VARIABLES -------- */
-:root {
-  --font-main: "Inter", sans-serif;
-  --bg: #f4f6f8;
-  --text: #1c1f23;
-  --accent: #2c3e50;
-  --card-bg: #ffffff;
-  --card-shadow: rgba(0, 0, 0, 0.08);
-  --hover-scale: 1.03;
 }
 
 /* -------- LAYOUT -------- */
@@ -109,7 +109,7 @@ a {
 }
 
 /* -------- RESPONSIVE -------- */
-@media (max-width: 480px) {
+@media screen and (min-width: 320px) {
   .content {
     padding: 1rem;
     max-width: 320px;
@@ -117,7 +117,7 @@ a {
   }
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   .content {
     padding: 1.5rem;
     max-width: 768px;
@@ -125,7 +125,7 @@ a {
   }
 }
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1200px) {
   .content {
     padding: 2rem 3rem;
     max-width: 1200px;
