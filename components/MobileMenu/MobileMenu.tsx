@@ -13,7 +13,7 @@ const links = [
   { href: "/tools", label: "Інструменти" },
   { href: "/checklist", label: "Check-List" },
   { href: "/team", label: "Team" },
-  { href: "/resources", label: "Ресурси" },
+  { href: "/resources", label: "Resources" },
 ];
 
 export default function MobileMenu() {
@@ -28,7 +28,7 @@ export default function MobileMenu() {
       {open && (
         <div className={styles.overlay}>
           <button className={styles.close} onClick={() => setOpen(false)}>
-            ×
+            x
           </button>
           <nav className={styles.nav}>
             {links.map(({ href, label }) => (

@@ -19,7 +19,7 @@ export default function Header() {
           <Link href="/tools">Інструменти</Link>
           <Link href="/checklist">Check-List</Link>
           <Link href="/team">Team</Link>
-          <Link href="/resources">Ресурси</Link>
+          <Link href="/resources">Resources</Link>
         </nav>
       </div>
     </header>
