@@ -33,7 +33,7 @@ const team = [
     name: "Inessa",
     age: 30,
     interests: "Linguistics. Study of foreign languages",
-    photo: "/team/inessa.jpeg",
+    photo: "/team/inessa.webp",
     hobby: "Travel. Reading books, interesting texts and materials. Sports.",
     email: "dlya.del27@gmail.com",
     socials: {
@@ -49,7 +49,7 @@ const team = [
     name: "Tetiana Lvova",
     age: 38,
     interests: "Traveling, reading historical and psychological literature",
-    photo: "/team/tetiana_lvova.jpeg",
+    photo: "/team/tetiana_lvova.webp",
     hobby: "Bake cakes",
     email: "ltvlvova@gmail.com",
     socials: {
