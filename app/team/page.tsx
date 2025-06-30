@@ -19,6 +19,7 @@ const team = [
     interests: "To develop, to learn new things",
     photo: "/team/vitalii_korolkov.webp",
     hobby: "I love saunas and bike rides.",
+    email: "korolkovitalii@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/vitalii-korolkov-1ab800339/",
       telegram: "https://web.telegram.org/a/#330808029",
@@ -34,6 +35,7 @@ const team = [
     interests: "Linguistics. Study of foreign languages",
     photo: "/team/inessa.jpeg",
     hobby: "Travel. Reading books, interesting texts and materials. Sports.",
+    email: "dlya.del27@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
       telegram: "https://t.me/",
@@ -45,15 +47,16 @@ const team = [
   },
   {
     name: "Tetiana Lvova",
-    age: 18,
-    interests: "??????????",
+    age: 38,
+    interests: "Traveling, reading historical and psychological literature",
     photo: "/team/tetiana_lvova.jpeg",
-    hobby: "???????????????",
+    hobby: "Bake cakes",
+    email: "ltvlvova@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
       telegram: "https://t.me/",
       youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
+      instagram: "https://www.instagram.com/tl_lvova?igsh=MXhybW15aWJleGc5Yw==",
       facebook: "https://facebook.com/",
       twitter: "https://twitter.com/",
     },
@@ -64,6 +67,7 @@ const team = [
     interests: "Immersion in IT",
     photo: "/team/DEDda.webp",
     hobby: "Working in your garden, coding",
+    email: "mgm.agro04@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/andrii-ded-romanov/",
       telegram: "https://web.telegram.org/a/#1078273912",
@@ -79,6 +83,7 @@ const team = [
     interests: "??????????",
     photo: "/team/image.png",
     hobby: "???????????????",
+    email: "",
     socials: {
       linkedin: "https://linkedin.com/",
       telegram: "https://t.me/",
@@ -94,6 +99,7 @@ const team = [
     interests: "??????????",
     photo: "/team/image.png",
     hobby: "???????????????",
+    email: "",
     socials: {
       linkedin: "https://linkedin.com/",
       telegram: "https://t.me/",
@@ -109,6 +115,7 @@ const team = [
     interests: "??????????",
     photo: "/team/image.png",
     hobby: "???????????????",
+    email: "",
     socials: {
       linkedin: "https://linkedin.com/",
       telegram: "https://t.me/",
@@ -124,6 +131,7 @@ const team = [
     interests: "??????????",
     photo: "/team/image.png",
     hobby: "???????????????",
+    email: "",
     socials: {
       linkedin: "https://linkedin.com/",
       telegram: "https://t.me/",
@@ -210,7 +218,17 @@ export default function TeamPage() {
                 priority={i === 0}
               />
               <h3>
-                {member.name}, {member.age}
+                {member.email ? (
+                  <a
+                    href={`mailto:${member.email}?subject=Hello ${member.name}`}
+                    className={styles.emailLink}
+                  >
+                    {member.name}
+                  </a>
+                ) : (
+                  member.name
+                )}
+                , {member.age}
               </h3>
               <p>
                 <strong>Interests:</strong> {member.interests}
@@ -226,6 +244,7 @@ export default function TeamPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialButton}
+                  data-tooltip="Send email"
                 >
                   <RiLinkedinFill />
                 </a>

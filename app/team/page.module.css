@@ -171,3 +171,55 @@
   left: 150px;
   transition: 0.5s ease-in-out;
 }
+/*emailLink*/
+.emailLink {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.emailLink:hover {
+  text-decoration: underline;
+  color: #6ab1d7;
+  transform: scale(1.1);
+  cursor: url("/icons/mail-cursor-s.png") 24 24, auto; /* Трохи менше курсор */
+}
+
+/* Tooltip */
+/*.emailLink::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 140%;
+  left: 20%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}*/
+
+/* Tooltip arrow */
+.emailLink::before {
+  content: "Send email";
+  position: absolute;
+  /*right: 100%;*/
+  top: 60%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.emailLink:hover::after,
+.emailLink:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
