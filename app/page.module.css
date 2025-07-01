@@ -1,10 +1,49 @@
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg) translateY(-7px);
+  }
+  50% {
+    transform: rotate(-3deg) translateY(-7px);
+  }
+  75% {
+    transform: rotate(3deg) translateY(-7px);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .main {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background-color: #f5f5f5;
 }
 
 .content {
@@ -12,9 +51,10 @@
   flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
-  gap: 2rem;
+  gap: 4rem;
   align-items: center;
   justify-content: space-between;
+  /*background-color: var(--bg-body);*/
 }
 
 .textBlock {
@@ -22,12 +62,18 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  opacity: 0;
+  animation: slideInLeft 3s ease-in-out forwards;
 }
 
 .heading {
   font-size: 2.5rem;
   font-weight: bold;
   color: #333;
+  display: inline-block;
+  animation: wobble 3s ease-in-out forwards;
+  animation-delay: 3s;
+  text-align: center;
 }
 
 .tasks {
@@ -41,6 +87,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: slideInRight 1.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+  background-color: var(--bg-body);
 }
 
 .imageGroup {
@@ -50,13 +100,13 @@
 
 .imageMain {
   display: block;
+  /*margin-top: 140px;*/
 }
 
 .imageFrog {
   position: absolute;
-  bottom: 0; /*як високо жаба сидить.*/
-  left: -76px; /*наскільки вона зміщена вліво.*/
-  border-radius: 8px;
+  bottom: 0;
+  left: -72px;
 }
 
 /* Планшет */
@@ -65,26 +115,21 @@
     flex-direction: column;
     align-items: center;
   }
-  .imageFrog {
-    bottom: 0;
-    left: -72px;
-  }
 }
 
 /* Мобільний */
 @media (max-width: 320px) {
   .heading {
-    font-size: 1.8rem;
-    text-align: center;
+    font-size: 1.4rem;
   }
   .imageMain {
     width: 200px;
     height: auto;
+    margin-top: 0;
   }
   .imageFrog {
     width: 60px !important;
     height: auto;
-    bottom: 0;
     left: -36px;
   }
 }

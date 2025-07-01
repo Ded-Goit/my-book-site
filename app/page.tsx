@@ -19,10 +19,10 @@ const tasks = [
 
 export default function HomePage() {
   return (
-    <main className={styles.main}>
-      <section className={styles.content}>
+    <section className={styles.main}>
+      <div className={styles.content}>
         <div className={styles.textBlock}>
-          <h1 className={styles.heading}>«Зроби це зараз» — Брайан Трейсі</h1>
+          <h1 className={styles.heading}>«Зроби це зараз» Брайан Трейсі</h1>
           <div className={styles.tasks}>
             {tasks.map((task, index) => (
               <FrogTask
@@ -55,7 +55,7 @@ export default function HomePage() {
             />
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
