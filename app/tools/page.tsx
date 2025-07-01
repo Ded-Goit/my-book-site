@@ -33,6 +33,16 @@ export default function ToolsPage() {
       title: "The 80/20 rule",
       link: "https://asana.com/resources/pareto-principle-80-20-rule",
     },
+    {
+      title:
+        "Create, share and collaboratively work on mind maps with MindMeister, the leading online mind mapping software. Includes apps for iPhone, iPad and Android.",
+      link: "https://www.mindmeister.com/",
+    },
+    {
+      title:
+        "Boost efficiency both in work and life. Millions of people love it. ",
+      link: "https://www.xmind.net/",
+    },
   ];
 
   return (
