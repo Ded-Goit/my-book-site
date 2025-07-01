@@ -221,6 +221,38 @@ const team = [
       twitter: "https://twitter.com/",
     },
   },
+  {
+    name: "student",
+    age: 14,
+    interests: "??????????",
+    photo: "/team/image.png",
+    hobby: "???????????????",
+    email: "",
+    socials: {
+      linkedin: "https://linkedin.com/",
+      telegram: "https://t.me/",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
+  },
+  {
+    name: "Anna Popko",
+    age: 26,
+    interests: "IT, creative professions",
+    photo: "/team/anna_popko.webp",
+    hobby: "Reading, drawing and nature walks.",
+    email: "a.popko@goit.ua",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/anna-popko-1ab964272/",
+      telegram: "https://web.telegram.org/a/#381015143",
+      youtube: "https://youtube.com/",
+      instagram: "https://instagram.com/",
+      facebook: "https://facebook.com/",
+      twitter: "https://twitter.com/",
+    },
+  },
 ];
 export default function TeamPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
