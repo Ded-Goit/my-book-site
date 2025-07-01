@@ -1,12 +1,90 @@
 .main {
-  padding: 2rem 1rem;
-  font-family: var(--font-main);
-  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textBlock {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .heading {
-  color: var(--accent);
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.imagesBlock {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageGroup {
+  position: relative;
+  display: inline-block;
+}
+
+.imageMain {
+  display: block;
+}
+
+.imageFrog {
+  position: absolute;
+  bottom: 0; /*як високо жаба сидить.*/
+  left: -76px; /*наскільки вона зміщена вліво.*/
+  border-radius: 8px;
+}
+
+/* Планшет */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .imageFrog {
+    bottom: 0;
+    left: -72px;
+  }
+}
+
+/* Мобільний */
+@media (max-width: 320px) {
+  .heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .imageMain {
+    width: 200px;
+    height: auto;
+  }
+  .imageFrog {
+    width: 60px !important;
+    height: auto;
+    bottom: 0;
+    left: -36px;
+  }
 }
