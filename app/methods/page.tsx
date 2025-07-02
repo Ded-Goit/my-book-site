@@ -1,21 +1,10 @@
-/*export default function MethodsPage() {
-  return (
-    <section>
-      <h1>Ключові методи</h1>
-      <ul>
-        <li>З’їж жабу — зроби найскладніше першим</li>
-        <li>Плануй день заздалегідь</li>
-        <li>Правило 80/20 для продуктивності</li>
-        <li>Блоки глибокої роботи</li>
-      </ul>
-    </section>
-  );
-}*/
 "use client";
 
 import styles from "./methods.module.css";
-import { useEffect, useRef, useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const sections = [
   {
@@ -214,56 +203,66 @@ const sections = [
 ];
 
 export default function MethodsPage() {
-  const [expanded, setExpanded] = useState<number | null>(null);
-  const [mounted, setMounted] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleToggle = (index: number) => {
-    setExpanded((prev) => (prev === index ? null : index));
-  };
-
-  // Запуск анімації при mount
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   return (
     <section className={styles.wrapper}>
       <h1 className={styles.heading}>Book Sections & Insights</h1>
-      <p className={styles.hint}>
-        <span className={styles.desktopHint}>Click to expand/collapse</span>
-        <span className={styles.mobileHint}>Swipe left/right</span>
-      </p>
-      <div className={styles.scrollContainer} ref={containerRef}>
-        {sections.map((section, i) => (
-          <div
-            key={i}
-            className={`${styles.card} ${mounted ? styles.visible : ""} ${
-              expanded === i ? styles.expanded : ""
-            }`}
-            style={{
-              transitionDelay: `${i * 100}ms`,
-            }}
-            onClick={() => handleToggle(i)}
-          >
-            <div className={styles.cardHeader}>
-              <h3>
-                {section.number}. {section.title}
-              </h3>
-              {expanded === i ? (
-                <FaChevronUp className={styles.icon} />
-              ) : (
-                <FaChevronDown className={styles.icon} />
-              )}
-            </div>
-            <ul>
-              {section.insights.map((insight, j) => (
-                <li key={j}>{insight}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+
+      <div className={styles.navButtons}>
+        <button ref={prevRef} className={styles.navButton}>
+          <FaChevronLeft />
+        </button>
+        <button ref={nextRef} className={styles.navButton}>
+          <FaChevronRight />
+        </button>
       </div>
+
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={16}
+        loop={true}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onInit={(swiper) => {
+          if (
+            swiper.params.navigation &&
+            typeof swiper.params.navigation !== "boolean"
+          ) {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
+        pagination={{ clickable: true }}
+        speed={600} // Плавність переходу
+        breakpoints={{
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1200: { slidesPerView: 3 },
+        }}
+      >
+        {sections.map((section, i) => (
+          <SwiperSlide key={i}>
+            <div className={styles.slideCard}>
+              <div className={styles.cardHeader}>
+                <h3>
+                  {section.number}. {section.title}
+                </h3>
+              </div>
+              <ul>
+                {section.insights.map((insight, j) => (
+                  <li key={j}>{insight}</li>
+                ))}
+              </ul>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }
