@@ -22,6 +22,7 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
+
 .teamGrid::-webkit-scrollbar {
   display: none;
 }
@@ -96,7 +97,7 @@
   background-color: var(--accent);
 }
 
-/* Tablet: 2 картки в ряд */
+/* Tablet: 3-4 картки в ряд */
 @media (min-width: 768px) {
   .teamGrid {
     display: flex;
@@ -105,25 +106,30 @@
     justify-content: center;
   }
   .card {
-    flex: 1 1 45%;
-    max-width: 400px;
+    flex: 1 1 calc(33.333% - 1rem); /* 3 в ряд */
+    max-width: 300px;
   }
   .indicators {
     display: none;
   }
 }
 
-/* Desktop: 3 картки в ряд, нижній ряд по центру */
+/* Desktop: 4 картки в ряд */
 @media (min-width: 1200px) {
   .teamGrid {
-    display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center;
   }
   .card {
-    flex: 1 1 30%;
-    max-width: 350px;
+    flex: 1 1 calc(25% - 1rem); /* 4 в ряд */
+    max-width: 280px;
+  }
+}
+
+/* Великий десктоп: 5 карток в ряд */
+@media (min-width: 1600px) {
+  .card {
+    flex: 1 1 calc(20% - 1rem); /* 5 в ряд */
+    max-width: 260px;
   }
 }
 
