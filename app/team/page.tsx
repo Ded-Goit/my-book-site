@@ -146,7 +146,7 @@ const team = [
     age: 39,
     interests:
       "Career growth,travel. I enjoy working with numbers and analyzing data",
-    photo: "/team/image.png",
+    photo: "/team/yuliia_artiuk.webp",
     hobby: "Baking dessert",
     email: "artiukyu@gmail.com",
     socials: {
