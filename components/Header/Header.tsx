@@ -9,7 +9,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          Зроби це зараз
+          Do It Now
         </Link>
         <MobileMenu />
         <nav className={styles.desktopNav}>

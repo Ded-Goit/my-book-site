@@ -4,16 +4,16 @@ import FrogTask from "@/components/FrogTask/FrogTask";
 
 const tasks = [
   {
-    title: "З'їж жабу",
-    description: "Почни день із найскладнішого завдання.",
+    title: "«Eat a frog»",
+    description: "Start your day with the most difficult task",
   },
   {
-    title: "Фокус без відволікань",
-    description: "Виділи 90 хвилин на роботу без перерв.",
+    title: "«Focus without distractions»",
+    description: "Allocate 90 minutes to work without interruption",
   },
   {
-    title: "План на день",
-    description: "Пиши 3 ключові цілі щодня зранку.",
+    title: "«Plan your day»",
+    description: "Write down 3 key goals every morning",
   },
 ];
 
@@ -22,7 +22,7 @@ export default function HomePage() {
     <section className={styles.main}>
       <div className={styles.content}>
         <div className={styles.textBlock}>
-          <h1 className={styles.heading}>«Зроби це зараз» Брайан Трейсі</h1>
+          <h1 className={styles.heading}>«Do It Now» by Brian Tracy</h1>
           <div className={styles.tasks}>
             {tasks.map((task, index) => (
               <FrogTask
