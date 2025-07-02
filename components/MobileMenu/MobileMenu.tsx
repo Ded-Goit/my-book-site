@@ -8,7 +8,7 @@ import styles from "./MobileMenu.module.css";
 const links = [
   { href: "/", label: "Головна" },
   { href: "/about", label: "Про книгу" },
-  { href: "/methods", label: "Методи" },
+  { href: "/methods", label: "Insights" },
   { href: "/quotes", label: "Цитати" },
   { href: "/tools", label: "Tools" },
   { href: "/checklist", label: "Check-List" },

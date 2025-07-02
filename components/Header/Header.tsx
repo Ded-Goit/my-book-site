@@ -14,7 +14,7 @@ export default function Header() {
         <MobileMenu />
         <nav className={styles.desktopNav}>
           <Link href="/about">Про книгу</Link>
-          <Link href="/methods">Методи</Link>
+          <Link href="/methods">Insights</Link>
           <Link href="/quotes">Цитати</Link>
           <Link href="/tools">Tools</Link>
           <Link href="/checklist">Check-List</Link>
