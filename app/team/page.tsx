@@ -16,9 +16,9 @@ const team = [
   {
     name: "Vitalii Korolkov",
     age: 34,
-    interests: "To develop, to learn new things",
+    interests: "Personal development and learning new things",
     photo: "/team/vitalii_korolkov.webp",
-    hobby: "I love saunas and bike rides.",
+    hobby: "I enjoy saunas and going on bike rides",
     email: "korolkovitalii@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/vitalii-korolkov-1ab800339/",
@@ -32,9 +32,9 @@ const team = [
   {
     name: "Inessa",
     age: 30,
-    interests: "Linguistics. Study of foreign languages",
+    interests: "Linguistics and foreign language exploration",
     photo: "/team/inessa.webp",
-    hobby: "Travel. Reading books, interesting texts and materials. Sports.",
+    hobby: "Traveling, reading books,engaging materials and doing sports",
     email: "dlya.del27@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
@@ -48,9 +48,9 @@ const team = [
   {
     name: "Tetiana Lvova",
     age: 38,
-    interests: "Traveling, reading historical and psychological literature",
+    interests: "Traveling,reading historical and psychological literature",
     photo: "/team/tetiana_lvova.webp",
-    hobby: "Bake cakes",
+    hobby: "Baking cakes",
     email: "ltvlvova@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
@@ -64,9 +64,10 @@ const team = [
   {
     name: "DED",
     age: 53,
-    interests: "Immersion in IT",
+    interests:
+      "Deepening my expertise in IT and staying immersed in the digital world",
     photo: "/team/DEDda.webp",
-    hobby: "Working in your garden, coding",
+    hobby: "Gardening and coding—nurturing both plants and programs",
     email: "mgm.agro04@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/andrii-ded-romanov/",
@@ -80,9 +81,9 @@ const team = [
   {
     name: "Maryna Pasichnyk",
     age: 26,
-    interests: "self-development, career success",
+    interests: "Self-development and achieving career success",
     photo: "/team/maryna_pasichnyk.webp",
-    hobby: "Books, computer games, travel",
+    hobby: "Reading books, playing computer games, traveling",
     email: "marikimbzenshik@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
@@ -96,9 +97,9 @@ const team = [
   {
     name: "Daria",
     age: 39,
-    interests: "education",
+    interests: "Education and lifelong learning",
     photo: "/team/daria.webp",
-    hobby: "reading",
+    hobby: "Reading",
     email: "daria2k7@ukr.net",
     socials: {
       linkedin: "https://linkedin.com/",
@@ -112,9 +113,9 @@ const team = [
   {
     name: "Nataliia Nazarovska",
     age: 40,
-    interests: "data analytics, self-development, sports",
+    interests: "Data analytics, self-development, and sports",
     photo: "/team/nataliia_nazarovska.webp",
-    hobby: "traveling, reading paper books",
+    hobby: "Traveling and reading paper books",
     email: "nnazarowska@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/nataliia-nazarovska/",
@@ -128,9 +129,10 @@ const team = [
   {
     name: "Anton Rusanov",
     age: 48,
-    interests: "Studying data analysis",
+    interests:
+      "Studying data analysis and uncovering patterns behind the numbers",
     photo: "/team/anton_rusanov.webp",
-    hobby: "playing guitar, badminton",
+    hobby: "Playing guitar and enjoying a good match of badminton",
     email: "ruanvlad@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/anton-ruan-rusanov",
@@ -145,9 +147,9 @@ const team = [
     name: "Yuliia Artiuk",
     age: 39,
     interests:
-      "Career growth,travel. I enjoy working with numbers and analyzing data",
+      "Career growth and travel. I enjoy working with numbers and analyzing data",
     photo: "/team/yuliia_artiuk.webp",
-    hobby: "Baking dessert",
+    hobby: "Baking desserts",
     email: "artiukyu@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
@@ -161,7 +163,7 @@ const team = [
   {
     name: "Alisa Tsurukova",
     age: 40,
-    interests: "Self-development, studying data analysis",
+    interests: "Self-development and studying data analysis",
     photo: "/team/alisa_tsurukova.webp",
     hobby:
       "Traveling, graphic novels, handcrafting (leather work, embroidery), baking",
@@ -179,9 +181,10 @@ const team = [
     name: "Kateryna Rudnyk",
     age: 25,
     interests:
-      "Data analysis and working with numbers, performing calculations.",
+      "Data analysis, numerical problem-solving, and performing complex calculations",
     photo: "/team/kateryna_rudnyk.webp",
-    hobby: "Sports, cooking, traveling, learning foreign languages.",
+    hobby:
+      "Staying active through sports, experimenting in the kitchen, exploring new places, and learning foreign languages",
     email: "katyarudnik00@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/katya-rudnik256h452/",
@@ -195,9 +198,9 @@ const team = [
   {
     name: "Natalya",
     age: 39,
-    interests: "travel, sport",
+    interests: "Traveling and staying active through sports",
     photo: "/team/natalya_demarchuk.webp",
-    hobby: "In my free time I like to bake desserts.",
+    hobby: "Baking desserts in my free time",
     email: "nata.demarchuk@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
@@ -211,7 +214,7 @@ const team = [
   {
     name: "Larysa Yevsiukova",
     age: 52,
-    interests: "Self-development, modern information technologies",
+    interests: "Self-development and modern information technologies",
     photo: "/team/larysa_evsiukova.webp",
     hobby: "Spending time in nature, growing plants, sewing",
     email: "laraevs18@gmail.com",
@@ -229,7 +232,7 @@ const team = [
     age: 20,
     interests: "Personal and career development",
     photo: "/team/oleksandra-baranchuk.webp",
-    hobby: "Reading, active leisure, solving logic puzzles",
+    hobby: "Reading, staying active, solving logic puzzles",
     email: "baranchukoleksandra@gmail.com",
     socials: {
       linkedin: "https://linkedin.com/",
@@ -243,9 +246,9 @@ const team = [
   {
     name: "Anna Popko",
     age: 26,
-    interests: "IT, creative professions",
+    interests: "Information technology and creative professions",
     photo: "/team/anna_popko.webp",
-    hobby: "Reading, drawing and nature walks.",
+    hobby: "Reading, drawing, enjoying walks in nature",
     email: "a.popko@goit.ua",
     socials: {
       linkedin: "https://www.linkedin.com/in/anna-popko-1ab964272/",
@@ -349,7 +352,7 @@ export default function TeamPage() {
                 <strong>Interests:</strong> {member.interests}
               </p>
               <p>
-                <strong>Hobby:</strong> {member.hobby}
+                <strong>Hobbies:</strong> {member.hobby}
               </p>
             </div>
             <div className={styles.socials}>
