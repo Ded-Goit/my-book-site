@@ -3,19 +3,23 @@ import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
-  title: "Зроби це зараз — Брайан Трейсі",
-  description: "Сайт з ідеями, інструментами та методами проти прокрастинації",
+  title: "Do It Now - Brian Tracy",
+  description: "A site with ideas, tools and methods against procrastination",
+  icons: {
+    icon: "/favicon.png",
+  },
   keywords: [
-    "Брайан Трейсі",
-    "Зроби це зараз",
-    "прокрастинація",
-    "мотивація",
-    "тайм-менеджмент",
+    "Brian Tracy",
+    "Do It Now",
+    "procrastination",
+    "motivation",
+    "time management",
+    "21 Great Ways Book",
   ],
   authors: [{ name: "Твоя команда" }],
   openGraph: {
-    title: "Зроби це зараз — Брайан Трейсі",
-    description: "21 метод подолання прокрастинації",
+    title: "Do It Now - Brian Tracy",
+    description: "21 methods to overcome procrastination",
     type: "website",
     locale: "en",
   },
@@ -34,8 +38,7 @@ export default function RootLayout({
           <main className="content">{children}</main>
           <footer className="footer">
             <p>
-              &copy; {new Date().getFullYear()} Зроби це зараз | Команда
-              SoftSkills
+              &copy; {new Date().getFullYear()} Do It Now | team НАЗВА КОМАНДИ
             </p>
           </footer>
         </div>
