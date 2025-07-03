@@ -12,7 +12,6 @@ export default function Header() {
         <Link href="/" className={styles.logo}>
           Do It Now
         </Link>
-        <ThemeSwitcher />
 
         <MobileMenu />
         <nav className={styles.desktopNav}>
@@ -24,6 +23,7 @@ export default function Header() {
           <Link href="/team">Team</Link>
           <Link href="/resources">Resources</Link>
         </nav>
+        <ThemeSwitcher />
       </div>
     </header>
   );

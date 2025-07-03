@@ -2,29 +2,27 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import styles from "./ThemeSwitcher.module.css";
+import { Sun, Moon } from "lucide-react"; // Додай lucide-react (або іншу бібліотеку іконок)
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Щоб уникнути гідратації різниці
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
+  const isDark = theme === "dark";
+
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      style={{
-        background: "var(--accent)",
-        color: "#000",
-        padding: "0.5rem 1rem",
-        borderRadius: "6px",
-        cursor: "pointer",
-        marginTop: "2rem",
-      }}
+      className={styles.button}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label="Перемикач теми"
     >
-      Switch to {theme === "dark" ? "Light" : "Dark"} Mode
+      {isDark ? <Sun size={16} /> : <Moon size={16} />}
+      {isDark ? "Light Mode" : "Dark Mode"}
     </button>
   );
 }
