@@ -265,7 +265,6 @@ export default function TeamPage() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Автоскрол
   const scrollToIndex = (index: number) => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
@@ -273,7 +272,7 @@ export default function TeamPage() {
     container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
     setActiveIndex(index);
   };
-
+  // Автоскрол
   /*useEffect(() => {
     const interval = setInterval(() => {
       const nextIndex = (activeIndex + 1) % team.length;
@@ -299,9 +298,14 @@ export default function TeamPage() {
 
   return (
     <section className={styles.wrapper}>
-      <h1 className={styles.heading}>Our team</h1>
-      <h2 className={styles.heading}>Slogan:</h2>
-      <h3 className={styles.heading}>Description:</h3>
+      <h1 className={styles.heading}>UAnalytica</h1>
+      <h2 className={styles.heading}>
+        With Ukraine in our hearts. With data in our hands.
+      </h2>
+      <h3 className={styles.heading}>
+        A student team from Ukraine that proves: deep analysis is power. We work
+        on real problems to change the world with the help of data.
+      </h3>
       <div className={styles.teamGrid} ref={scrollRef}>
         {team.map((member, i) => (
           <div

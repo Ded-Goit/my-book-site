@@ -3,13 +3,67 @@ export default function QuotesPage() {
     <section>
       <h1>Цитати з книги</h1>
       <blockquote>
+        «Clarity is the most important concept for personal productivity»
+      </blockquote>
+      <blockquote>
+        «All big goals seem unachievable only while they are whole»
+      </blockquote>
+      <blockquote>
+        «All big goals seem unachievable only while they are whole»
+      </blockquote>
+      <blockquote>
         «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
       </blockquote>
       <blockquote>
-        «Щоденне планування збільшує ефективність у 10 разів.»
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
       </blockquote>
       <blockquote>
-        «Ваше найважливіше завдання — найчастіше й найнеприємніше.»
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
+      </blockquote>
+      <blockquote>
+        «Якщо вам потрібно з’їсти жабу, не варто довго на неї дивитися.»
       </blockquote>
     </section>
   );

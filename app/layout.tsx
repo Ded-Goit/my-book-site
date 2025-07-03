@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "time management",
     "21 Great Ways Book",
   ],
-  authors: [{ name: "Твоя команда" }],
+  authors: [{ name: "UAnalytica" }],
   openGraph: {
     title: "Do It Now - Brian Tracy",
     description: "21 methods to overcome procrastination",
@@ -40,7 +40,7 @@ export default function RootLayout({
             <main className="content">{children}</main>
             <footer className="footer">
               <p>
-                &copy; {new Date().getFullYear()} Do It Now | team НАЗВА КОМАНДИ
+                &copy; {new Date().getFullYear()} Do It Now | team UAnalytica
               </p>
             </footer>
           </div>
