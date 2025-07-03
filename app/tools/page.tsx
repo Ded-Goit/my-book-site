@@ -1,25 +1,13 @@
-/**export default function ToolsPage() {
-  return (
-    <section>
-      <h1>Інструменти з книги</h1>
-      <ul>
-        <li>Матриця пріоритетів (важливе/термінове)</li>
-        <li>Таймер Помодоро</li>
-        <li>Щоденне планування вечором</li>
-        <li>Правило 80/20</li>
-      </ul>
-    </section>
-  );
-}*/
 "use client";
 
 import styles from "./tools.module.css";
+import Image from "next/image";
 
 export default function ToolsPage() {
   const tools = [
     {
-      title: "Priority matrix (important/urgent)",
-      link: "https://experience.dropbox.com/uk-ua/resources/eisenhower-matrix",
+      title: "The 80/20 rule",
+      link: "https://asana.com/resources/pareto-principle-80-20-rule",
     },
     {
       title: "Pomodoro Timer",
@@ -30,8 +18,8 @@ export default function ToolsPage() {
       link: "https://www.microsoft.com/uk-ua/microsoft-365/microsoft-to-do-list-app",
     },
     {
-      title: "The 80/20 rule",
-      link: "https://asana.com/resources/pareto-principle-80-20-rule",
+      title: "Priority matrix (important/urgent)",
+      link: "https://experience.dropbox.com/uk-ua/resources/eisenhower-matrix",
     },
     {
       title:
@@ -63,6 +51,22 @@ export default function ToolsPage() {
             </div>
           </a>
         ))}
+      </div>
+      <div className={styles.frogBlock}>
+        <Image
+          src="/frogs/tools.webp"
+          alt="Tools background"
+          width={800} // став реальний розмір або приблизний
+          height={500}
+          className={styles.bgImage}
+        />
+        <Image
+          src="/frogs/dzen_frog.webp"
+          alt="Zen frog"
+          width={200} // став розмір для жаби
+          height={200}
+          className={styles.centerImage}
+        />
       </div>
     </section>
   );
