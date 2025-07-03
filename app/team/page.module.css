@@ -1,3 +1,4 @@
+/* Wrapper */
 .wrapper {
   min-height: 100vh;
   padding: 2rem 1rem;
@@ -11,7 +12,7 @@
   color: var(--accent);
 }
 
-/* Грід карток */
+/* Mobile First: горизонтальний свайп */
 .teamGrid {
   display: flex;
   overflow-x: auto;
@@ -22,20 +23,19 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
-
 .teamGrid::-webkit-scrollbar {
   display: none;
 }
 
-/* Картка */
+/* Картка (mobile) */
 .card {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 100%;
-  scroll-snap-align: center;
   background: var(--card-bg);
-  border-radius: 80px;
+  border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 12px var(--card-shadow);
@@ -43,8 +43,6 @@
   transform: translateY(50px) scale(0.95);
   animation: fadeInUpScale 1s ease forwards;
   animation-delay: calc(var(--index) * 200ms);
-  perspective: 1000px;
-  will-change: transform;
 }
 
 /* Контент картки */
@@ -62,7 +60,7 @@
   object-fit: cover;
 }
 
-/* Анімація появи */
+/* Анімація */
 @keyframes fadeInUpScale {
   0% {
     opacity: 0;
@@ -97,39 +95,33 @@
   background-color: var(--accent);
 }
 
-/* Tablet: 3-4 картки в ряд */
+/* Tablet ≥768px: grid 2-3 колонки */
 @media (min-width: 768px) {
   .teamGrid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    justify-content: center;
+    overflow: visible;
   }
   .card {
-    flex: 1 1 calc(33.333% - 1rem); /* 3 в ряд */
-    max-width: 300px;
+    flex: initial;
   }
   .indicators {
     display: none;
   }
 }
 
-/* Desktop: 4 картки в ряд */
-@media (min-width: 1200px) {
+/* Desktop ≥1024px: 4 колонки */
+@media (min-width: 1024px) {
   .teamGrid {
-    gap: 2rem;
-  }
-  .card {
-    flex: 1 1 calc(25% - 1rem); /* 4 в ряд */
-    max-width: 280px;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Великий десктоп: 5 карток в ряд */
-@media (min-width: 1600px) {
-  .card {
-    flex: 1 1 calc(20% - 1rem); /* 5 в ряд */
-    max-width: 260px;
+/* Large Desktop ≥1440px: 5 колонок */
+@media (min-width: 1440px) {
+  .teamGrid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -148,10 +140,10 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  position: relative;
-  overflow: hidden;
   border: 2px solid var(--accent);
   color: var(--accent);
+  position: relative;
+  overflow: hidden;
   transition: 0.2s ease-in-out;
 }
 .socialButton:before {
@@ -177,7 +169,8 @@
   left: 150px;
   transition: 0.5s ease-in-out;
 }
-/*emailLink*/
+
+/* Email link */
 .emailLink {
   color: var(--accent);
   text-decoration: none;
@@ -185,20 +178,18 @@
   cursor: pointer;
   position: relative;
 }
-
 .emailLink:hover {
   text-decoration: underline;
   color: #6ab1d7;
   transform: scale(1.1);
-  cursor: url("/icons/mail-cursor-s.png") 24 24, auto; /* Трохи менше курсор */
 }
 
 /* Tooltip */
-/*.emailLink::after {
+.emailLink::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: 140%;
-  left: 20%;
+  left: 50%;
   transform: translateX(-50%) translateY(10px);
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
@@ -210,20 +201,17 @@
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10;
-}*/
-
-/* Tooltip arrow */
+}
 .emailLink::before {
   content: "Send email";
   position: absolute;
-  /*right: 100%;*/
   top: 60%;
+  left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 10;
 }
-
 .emailLink:hover::after,
 .emailLink:hover::before {
   opacity: 1;

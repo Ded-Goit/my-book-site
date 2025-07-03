@@ -19,43 +19,45 @@ const tasks = [
 
 export default function HomePage() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.content}>
-        <div className={styles.textBlock}>
-          <h1 className={styles.heading}>«Do It Now» by Brian Tracy</h1>
-          <div className={styles.tasks}>
-            {tasks.map((task, index) => (
-              <FrogTask
-                key={index}
-                title={task.title}
-                description={task.description}
+    <>
+      <section className={styles.hero}>
+        <div className={styles.content}>
+          <div className={styles.textBlock}>
+            <h1 className={styles.heading}>«Do It Now» by Brian Tracy</h1>
+            <div className={styles.tasks}>
+              {tasks.map((task, index) => (
+                <FrogTask
+                  key={index}
+                  title={task.title}
+                  description={task.description}
+                />
+              ))}
+            </div>
+          </div>
+          <div className={styles.imagesBlock}>
+            <div className={styles.imageGroup}>
+              <Image
+                src="/book.webp"
+                alt="book Do it Now"
+                width={300}
+                height={400}
+                sizes="(max-width: 480px) 200px,
+                       (max-width: 1024px) 250px,
+                       300px"
+                priority
+                className={styles.imageMain}
               />
-            ))}
+              <Image
+                src="/frogs/frog_with_red_legs.webp"
+                alt="frog"
+                width={120}
+                height={120}
+                className={styles.imageFrog}
+              />
+            </div>
           </div>
         </div>
-        <div className={styles.imagesBlock}>
-          <div className={styles.imageGroup}>
-            <Image
-              src="/book.webp"
-              alt="book Do it Now"
-              width={300}
-              height={400}
-              sizes="(max-width: 480px) 200px,
-                     (max-width: 1024px) 250px,
-                     300px"
-              priority
-              className={styles.imageMain}
-            />
-            <Image
-              src="/frogs/frog_with_red_legs.webp"
-              alt="frog"
-              width={120}
-              height={120}
-              className={styles.imageFrog}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

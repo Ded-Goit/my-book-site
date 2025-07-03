@@ -1,5 +1,6 @@
+/* -------- IMPORTS -------- */
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
@@ -7,12 +8,27 @@
 /* -------- THEME VARIABLES -------- */
 :root {
   --font-main: "Inter", sans-serif;
+
+  /* Mobile First: dark theme за замовчуванням */
+  --bg: #000;
+  --text: #f4f4f4;
+  --accent: #8bc34a;
+
+  --card-bg: #111;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+
+  --hover-scale: 1.05;
+  --transition-base: 0.3s ease;
+}
+
+/* Light theme overrides */
+html.light {
   --bg: #f4f6f8;
   --text: #1c1f23;
   --accent: #2c3e50;
-  --card-bg: #ffffff;
-  --card-shadow: rgba(0, 0, 0, 0.08);
-  --hover-scale: 1.03;
+
+  --card-bg: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* -------- RESET & BASE -------- */
@@ -30,7 +46,7 @@ body {
   font-family: var(--font-main);
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,6 +58,17 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 button,
@@ -52,14 +79,9 @@ textarea {
   border: none;
   outline: none;
   background: none;
+  cursor: pointer;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* -------- LAYOUT -------- */
 .layout {
   display: flex;
   flex-direction: column;
@@ -68,67 +90,17 @@ a {
 
 .content {
   flex: 1 0 auto;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer {
   margin-top: auto;
   padding: 1rem;
-  background-color: #eaecee;
+  background-color: var(--card-bg);
   text-align: center;
   font-size: 0.9rem;
-  color: #555;
-}
-
-/* -------- SWIPER OVERRIDES -------- */
-.swiper-slide {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 12px var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.swiper-slide:hover {
-  transform: scale(var(--hover-scale));
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-/* -------- ANIMATION -------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* -------- RESPONSIVE -------- */
-@media screen and (min-width: 320px) {
-  .content {
-    padding: 1rem;
-    max-width: 320px;
-    margin: auto;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .content {
-    padding: 1.5rem;
-    max-width: 768px;
-    margin: auto;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .content {
-    padding: 2rem 3rem;
-    max-width: 1200px;
-    margin: auto;
-  }
+  color: #aaa;
 }

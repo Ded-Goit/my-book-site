@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Do It Now - Brian Tracy",
@@ -31,17 +32,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="layout">
-          <Header />
-          <main className="content">{children}</main>
-          <footer className="footer">
-            <p>
-              &copy; {new Date().getFullYear()} Do It Now | team НАЗВА КОМАНДИ
-            </p>
-          </footer>
-        </div>
+        <ThemeProvider>
+          <div className="layout">
+            <Header />
+            <main className="content">{children}</main>
+            <footer className="footer">
+              <p>
+                &copy; {new Date().getFullYear()} Do It Now | team НАЗВА КОМАНДИ
+              </p>
+            </footer>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

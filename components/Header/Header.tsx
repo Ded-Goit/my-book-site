@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MobileMenu from "@/components/MobileMenu/MobileMenu";
 import styles from "./Header.module.css";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Header() {
   return (
@@ -11,6 +12,8 @@ export default function Header() {
         <Link href="/" className={styles.logo}>
           Do It Now
         </Link>
+        <ThemeSwitcher />
+
         <MobileMenu />
         <nav className={styles.desktopNav}>
           <Link href="/about">Про книгу</Link>
