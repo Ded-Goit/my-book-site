@@ -16,21 +16,13 @@ import { AiOutlineDatabase } from "react-icons/ai";
 
 export default function ResourcesPage() {
   const resources = [
-    // 🎥 Відео / YouTube
-    {
-      title: "Learning how to learn",
-      description: "Barbara Oakley's famous talk on how to learn effectively.",
-      icon: <FaYoutube />,
-      link: "https://www.youtube.com/watch?v=O96fE1E-rf8",
-    },
-    {
-      title: "Eat That Frog (video)",
-      description: "Brian Tracy's method explained on YouTube.",
-      icon: <FaYoutube />,
-      link: "https://www.youtube.com/watch?v=cvlUaP54w78",
-    },
-
     // 📚 Курси / Навчання
+    {
+      title: "freeCodeCamp ",
+      description: "Our mission: to help people learn to code for free. ",
+      icon: <FaBookOpen />,
+      link: "https://www.freecodecamp.org/learn",
+    },
     {
       title: "Learn to Learn (Coursera)",
       description: "Powerful mental tools to master difficult subjects.",
@@ -42,18 +34,6 @@ export default function ResourcesPage() {
       description: "Free Ukrainian online education.",
       icon: <HiOutlineLightBulb />,
       link: "https://prometheus.org.ua",
-    },
-    {
-      title: "Eat That Frog (summary - Moonshots)",
-      description: "Moonshots summary of Brian Tracy's book.",
-      icon: <FaBookOpen />,
-      link: "https://www.moonshots.io/eat-that-frog-by-brian-tracy",
-    },
-    {
-      title: "Eat That Frog (summary - Samuel Davies)",
-      description: "Samuel Thomas Davies summary.",
-      icon: <FaBookOpen />,
-      link: "https://www.samuelthomasdavies.com/book-summaries/business/eat-that-frog",
     },
 
     // 🎧 Аудіо / Подкасти
@@ -220,6 +200,26 @@ export default function ResourcesPage() {
       description: "Practice coding through games.",
       icon: <BiCodeBlock />,
       link: "http://codingame.com",
+    },
+    // 📚 Курси / Навчання
+    {
+      title: "Eat That Frog (summary - Samuel Davies)",
+      description: "Samuel Thomas Davies summary.",
+      icon: <FaBookOpen />,
+      link: "https://www.samuelthomasdavies.com/book-summaries/business/eat-that-frog",
+    },
+    // 🎥 Відео / YouTube
+    {
+      title: "Learning how to learn",
+      description: "Barbara Oakley's famous talk on how to learn effectively.",
+      icon: <FaYoutube />,
+      link: "https://www.youtube.com/watch?v=O96fE1E-rf8",
+    },
+    {
+      title: "Eat That Frog (video)",
+      description: "Brian Tracy's method explained on YouTube.",
+      icon: <FaYoutube />,
+      link: "https://www.youtube.com/watch?v=cvlUaP54w78",
     },
   ];
   const legend = [

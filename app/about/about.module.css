@@ -79,7 +79,7 @@
   position: absolute;
   top: -30px;
   right: -30px;
-  background: #fff;
+  background: var(--accent);
   border-radius: 50%;
   padding: 0.5rem 0.7rem;
   font-size: 1.2rem;
