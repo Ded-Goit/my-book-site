@@ -138,6 +138,7 @@
 }
 
 .item:hover {
+  background-color: rgba(var(--accent-rgb), 0.5);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
@@ -167,6 +168,16 @@
 
   .progressContainer {
     top: 84px; /* Desktop header + offset */
+  }
+  .item label {
+    justify-content: flex-start; /* чекбокс зліва */
+    align-items: center;
+  }
+
+  .item label span {
+    flex: 1;
+    margin-left: 2rem;
+    text-align: right;
   }
 }
 

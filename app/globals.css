@@ -12,8 +12,8 @@
   /* Mobile First: dark theme за замовчуванням */
   --bg: #000;
   --text: #f4f4f4;
-  --accent: #8bc34a;
-
+  --accent: rgb(139, 195, 74);
+  --accent-rgb: 139, 195, 74;
   --card-bg: #111;
   --card-shadow: rgba(0, 0, 0, 0.5);
 
@@ -25,7 +25,8 @@
 html.light {
   --bg: #f4f6f8;
   --text: #1c1f23;
-  --accent: #2c3e50;
+  --accent: rgb(44, 62, 80);
+  --accent-rgb: rgb(44, 62, 80);
 
   --card-bg: #fff;
   --card-shadow: rgba(0, 0, 0, 0.1);
