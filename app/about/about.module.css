@@ -1,5 +1,4 @@
-/* app/about/about.module.css */
-
+/* === Base Wrapper === */
 .wrapper {
   padding: 2rem 1rem;
   max-width: 1200px;
@@ -23,41 +22,33 @@
   width: 100%;
 }
 
-.image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px var(--card-shadow);
-  transition: transform 0.3s ease;
-}
-
-.image:hover {
-  transform: scale(1.02);
-}
-
 .colText {
   width: 100%;
 }
 
-.quote {
-  font-style: italic;
-  background: var(--card-bg);
-  padding: 1rem;
-  border-left: 4px solid var(--accent);
-  margin: 1rem 0;
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  cursor: zoom-in;
 }
 
-.keyPoints {
-  list-style: none;
-  padding: 0;
+/* === Only for clickable image (обкладинка) === */
+.clickableImage {
+  cursor: zoom-in;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: transform 0.3s ease;
 }
 
-.keyPoints li {
-  margin-bottom: 0.5rem;
+.clickableImage:hover {
+  cursor: zoom-in;
+  transform: scale(1.02);
 }
 
-/* Modal */
+/* === Only for portrait === */
+/* portrait uses only .image — no cursor, no shadow, no hover — done! */
+
+/* === Modal === */
 .modal {
   position: fixed;
   inset: 0;
@@ -76,10 +67,12 @@
   animation: scaleIn 0.3s ease;
 }
 
+/* Модальне зображення — чисте: без курсора, без ховера */
 .modalImage {
   width: 100%;
   height: auto;
   border-radius: 12px;
+  pointer-events: none; /* гарантія: не реагує на ховер чи кліки */
 }
 
 .closeBtn {
@@ -118,7 +111,24 @@
   }
 }
 
-/* Breakpoints */
+.quote {
+  font-style: italic;
+  background: var(--card-bg);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  margin: 1rem 0;
+}
+
+.keyPoints {
+  list-style: none;
+  padding: 0;
+}
+
+.keyPoints li {
+  margin-bottom: 0.5rem;
+}
+
+/* === Responsive === */
 @media (min-width: 768px) {
   .row {
     flex-direction: row;

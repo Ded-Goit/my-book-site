@@ -6,8 +6,8 @@ import { useState } from "react";
 import styles from "./MobileMenu.module.css";
 
 const links = [
-  { href: "/", label: "Головна" },
-  { href: "/about", label: "Про книгу" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About book" },
   { href: "/insights", label: "Insights" },
   { href: "/quotes", label: "Quotes" },
   { href: "/tools", label: "Tools" },

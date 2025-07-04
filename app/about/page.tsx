@@ -27,7 +27,7 @@ export default function AboutPage() {
 
   return (
     <section className={styles.wrapper}>
-      <h1 className={styles.heading}>Про книгу</h1>
+      <h1 className={styles.heading}>About book</h1>
 
       {/* Top Block */}
       <div className={styles.row}>
@@ -43,27 +43,26 @@ export default function AboutPage() {
         </div>
         <div className={styles.colText}>
           <p>
-            «Зроби це зараз» — книга Брайана Трейсі про те, як позбутися звички
-            відкладати важливе на потім. Вона містить 21 метод подолання
-            прокрастинації.
+            `Do It Now` is a book by Brian Tracy about how to break the habit of
+            putting off important things until later. It contains 21 methods for
+            overcoming procrastination.
           </p>
           <blockquote className={styles.quote}>
-            “To develop the habit of focusing and concentrating, you need to
-            master three key qualities: decision, discipline, and
-            determination.”
+            «To develop the habit of focusing and concentrating, you need to
+            master three key qualities: decision, discipline, and determination»
           </blockquote>
           <ul className={styles.keyPoints}>
             <li>
-              ✅ It is the ability to prioritize, act quickly, and follow
-              through on tasks that leads to success.
+              It is the ability to prioritize, act quickly, and follow through
+              on tasks that leads to success.
             </li>
             <li>
-              ✅ The “frog” is a metaphor for the most unpleasant yet most
+              The «frog» is a metaphor for the most unpleasant yet most
               important task—the one you should tackle first.
             </li>
             <li>
-              ✅ Consistently completing such tasks builds a habit of
-              productivity, boosts self-esteem, and drives positive change.
+              Consistently completing such tasks builds a habit of productivity,
+              boosts self-esteem, and drives positive change.
             </li>
           </ul>
         </div>
@@ -73,25 +72,27 @@ export default function AboutPage() {
       <div className={styles.row}>
         <div className={styles.colText}>
           <p>
-            Браян Трейсі – канадсько‑американський мотиваційний спікер,
-            письменник і спеціаліст із розвитку особистості. Народився 5 січня
-            1944 року в Чарлоттауні, острів Принца Едварда, Канада.
+            Brian Tracy is a Canadian-American motivational speaker, author, and
+            personal development expert. Born on January 5, 1944 in
+            Charlottetown, Prince Edward Island, Canada.
           </p>
           <p>
-            Він заснував компанію Brian Tracy International у 1984 році в
-            Ванкувері; сьогодні вона базується в Сан-Дієго, Каліфорнія, і надає
-            послуги у сфері лідерства, продажів, цілеорієнтації, стратегії,
-            творчості та психології успіху.
+            He founded Brian Tracy International in 1984 in Vancouver; today it
+            is based in San Diego, California, and provides services in
+            leadership, sales, goal orientation, strategy, creativity, and the
+            psychology of success.
           </p>
           <p>
-            За понад 30 років написав понад 80 книг, у тому числі бестселери Eat
-            That Frog!, No Excuses! та The Psychology of Achievement. Провів
-            більше 5 000 семінарів і виступив перед більш ніж 5 млн людей у
-            понад 55 країнах.
+            Over the course of more than 30 years, he has written more than 80
+            books, including the bestsellers Eat That Frog!, No Excuses!, and
+            The Psychology of Achievement. He has conducted more than 5,000
+            seminars and spoken to more than 5 million people in more than 55
+            countries.
           </p>
           <p>
-            Освіта: університет Альберти (Канада). Книги: понад 80 видань; Do it
-            now! продано 1.6 млн копій та перекладено на 42 мови.
+            Education: University of Alberta (Canada). Books: Over 80
+            publications. Do it now! sold 1.6 million copies and translated into
+            42 languages.
           </p>
         </div>
         <div className={styles.colImage}>
