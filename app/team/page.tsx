@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./team.module.css";
 import { useEffect, useRef, useState } from "react";
 import {
   RiLinkedinFill,
@@ -67,7 +67,7 @@ const team = [
     interests:
       "Deepening my expertise in IT and staying immersed in the digital world",
     photo: "/team/DEDda.webp",
-    hobby: "Gardening and coding—nurturing both plants and programs",
+    hobby: "Gardening and coding - nurturing both plants and programs",
     email: "mgm.agro04@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/in/andrii-ded-romanov/",
@@ -298,11 +298,15 @@ export default function TeamPage() {
 
   return (
     <section className={styles.wrapper}>
-      <h1 className={styles.heading}>UAnalytica</h1>
-      <h2 className={styles.heading}>
+      <h1 className={styles.headingMain}>UAnalytica</h1>
+
+      <h2 className={`${styles.heading} ${styles.headingSub} ${styles.delay2}`}>
         With Ukraine in our hearts. With data in our hands.
       </h2>
-      <h3 className={styles.heading}>
+
+      <h3
+        className={`${styles.heading} ${styles.headingDesc} ${styles.delay3}`}
+      >
         A student team from Ukraine that proves: deep analysis is power. We work
         on real problems to change the world with the help of data.
       </h3>

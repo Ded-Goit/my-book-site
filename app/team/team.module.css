@@ -1,4 +1,4 @@
-/* Wrapper */
+/* ========== Wrapper ========== */
 .wrapper {
   min-height: 100vh;
   padding: 2rem 1rem;
@@ -27,9 +27,9 @@
   display: none;
 }
 
-/* Картка (mobile) */
+/* Картка (mobile) — тепер одна на екрані */
 .card {
-  flex: 0 0 80%;
+  flex: 0 0 100%;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -52,12 +52,15 @@
   gap: 0.5rem;
 }
 
-/* Фото */
+/* Фото — завжди квадрат і кругле */
 .photo {
   display: block;
-  margin: 0 auto 1rem auto;
-  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  aspect-ratio: 1/1;
   object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
 }
 
 /* Анімація */
@@ -216,4 +219,120 @@
 .emailLink:hover::before {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+/* === Базова анімація === */
+.heading {
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Градієнт тільки для <h1> */
+.headingMain {
+  font-size: clamp(2rem, 6vw, 3rem);
+  background: linear-gradient(90deg, #007cf0, #00dfd8);
+  background-clip: text; /* Стандартна! */
+  -webkit-background-clip: text; /* Для Safari */
+  -webkit-text-fill-color: transparent;
+}
+
+.headingSub {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  color: var(--text-color, #333);
+}
+
+.headingDesc {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: var(--text-color, #555);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Затримки для каскаду */
+.delay1 {
+  animation-delay: 0.2s;
+}
+
+.delay2 {
+  animation-delay: 0.5s;
+}
+
+.delay3 {
+  animation-delay: 0.8s;
+}
+/* Основний заголовок */
+.headingMain {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+
+  /* 🇺🇦 Градієнт прапора */
+  background: linear-gradient(270deg, #0057b7, #ffd700, #0057b7, #ffd700);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Основна хвиля кольорів */
+  animation: flagWave 6s ease infinite;
+
+  /* Сяйво */
+  text-shadow: 0 0 10px rgba(0, 87, 183, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+
+  /* Позиціонування для блиску */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Блиск зверху */
+.headingMain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-25deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 125%;
+  }
+  100% {
+    left: 125%;
+  }
 }
