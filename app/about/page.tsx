@@ -101,7 +101,7 @@ export default function AboutPage() {
             alt="Brian Tracy"
             width={400}
             height={400}
-            className={styles.image}
+            className={styles.imagep}
           />
         </div>
       </div>
