@@ -202,6 +202,7 @@ const sections = [
     ],
   },
 ];
+
 export default function MethodsPage() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
