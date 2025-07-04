@@ -1,6 +1,7 @@
 "use client";
 
-import styles from "./methods.module.css";
+import Image from "next/image";
+import styles from "./insights.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { useRef } from "react";
@@ -55,9 +56,9 @@ const sections = [
     number: 6,
     title: "Use the ABCD Method Consistently",
     insights: [
-      "The First Law of Success – Concentration.",
+      "The First Law of Success - Concentration.",
       "Write your priorities down on paper.",
-      "A – what you must do, and until it is completed, do not move on.",
+      "A - what you must do, and until it is completed, do not move on.",
       "Discipline of execution is the core principle of success.",
     ],
   },
@@ -178,7 +179,7 @@ const sections = [
     title: "Create Large Blocks of Time",
     insights: [
       "Important work needs long uninterrupted stretches.",
-      "Set aside 60–90 minutes for deep focus.",
+      "Set aside 60 - 90 minutes for deep focus.",
       "Appreciate every minute.",
     ],
   },
@@ -201,7 +202,6 @@ const sections = [
     ],
   },
 ];
-
 export default function MethodsPage() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -221,7 +221,7 @@ export default function MethodsPage() {
 
       <Swiper
         modules={[Navigation, Pagination]}
-        spaceBetween={16}
+        spaceBetween={20}
         loop={true}
         navigation={{
           prevEl: prevRef.current,
@@ -239,7 +239,7 @@ export default function MethodsPage() {
           swiper.navigation.update();
         }}
         pagination={{ clickable: true }}
-        speed={600} // Плавність переходу
+        speed={600}
         breakpoints={{
           0: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
@@ -263,6 +263,17 @@ export default function MethodsPage() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className={styles.frogImageWrapper}>
+        <Image
+          src="/frogs/telefon_frog.webp"
+          alt="Telefon Frog"
+          width={300}
+          height={300}
+          className={styles.frogImage}
+          priority
+        />
+      </div>
     </section>
   );
 }
