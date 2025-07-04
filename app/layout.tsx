@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
 import ThemeProvider from "@/providers/ThemeProvider";
+import Footer from "@/components/Footer/Footer"; // ← правильний шлях
 
 export const metadata: Metadata = {
   title: "Do It Now - Brian Tracy",
@@ -38,11 +39,7 @@ export default function RootLayout({
           <div className="layout">
             <Header />
             <main className="content">{children}</main>
-            <footer className="footer">
-              <p>
-                &copy; {new Date().getFullYear()} Do It Now | team UAnalytica
-              </p>
-            </footer>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
