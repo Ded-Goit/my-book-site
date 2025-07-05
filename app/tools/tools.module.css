@@ -52,6 +52,7 @@
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   border: 2px solid var(--accent, #0070f3);
+  color: var(--hover-text-dark);
 }
 
 @keyframes fadeInUp {

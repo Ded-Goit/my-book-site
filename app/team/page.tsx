@@ -199,7 +199,7 @@ const team = [
     name: "Natalya",
     age: 39,
     interests: "Traveling and staying active through sports",
-    photo: "/team/natalya_demarchuk_1.webp",
+    photo: "/team/natalya_demarchuk.webp",
     hobby: "Baking desserts in my free time",
     email: "nata.demarchuk@gmail.com",
     socials: {

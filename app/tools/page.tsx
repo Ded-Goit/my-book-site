@@ -56,14 +56,14 @@ export default function ToolsPage() {
         <Image
           src="/frogs/tools.webp"
           alt="Tools background"
-          width={800} // став реальний розмір або приблизний
+          width={800} // реальний розмір або приблизний
           height={500}
           className={styles.bgImage}
         />
         <Image
           src="/frogs/dzen_frog.webp"
           alt="Zen frog"
-          width={200} // став розмір для жаби
+          width={200} // розмір для жаби
           height={200}
           className={styles.centerImage}
         />

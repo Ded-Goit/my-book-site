@@ -16,7 +16,7 @@
   --accent-rgb: 139, 195, 74;
   --card-bg: #111;
   --card-shadow: rgba(0, 0, 0, 0.5);
-
+  --hover-text-dark: #1c1f23;
   --hover-scale: 1.05;
   --transition-base: 0.3s ease;
 }
