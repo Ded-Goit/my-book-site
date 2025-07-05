@@ -80,6 +80,7 @@
     font-size: 1rem;
   }
 }
+
 .legend {
   display: flex;
   flex-wrap: wrap;
@@ -97,4 +98,15 @@
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   box-shadow: 0 2px 4px var(--card-shadow);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.legend span:hover {
+  background: var(--accent-bg);
+}
+
+.legend span.active {
+  background: var(--accent);
+  color: white;
 }

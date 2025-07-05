@@ -1,11 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import MobileMenu from "@/components/MobileMenu/MobileMenu";
 import styles from "./Header.module.css";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/about", label: "About book" },
+    { href: "/insights", label: "Insights" },
+    { href: "/quotes", label: "Quotes" },
+    { href: "/tools", label: "Tools" },
+    { href: "/checklist", label: "Check-List" },
+    { href: "/team", label: "Team" },
+    { href: "/resources", label: "Resources" },
+  ];
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -15,13 +28,15 @@ export default function Header() {
 
         <MobileMenu />
         <nav className={styles.desktopNav}>
-          <Link href="/about">About book</Link>
-          <Link href="/insights">Insights</Link>
-          <Link href="/quotes">Quotes</Link>
-          <Link href="/tools">Tools</Link>
-          <Link href="/checklist">Check-List</Link>
-          <Link href="/team">Team</Link>
-          <Link href="/resources">Resources</Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={pathname === link.href ? `${styles.activeLink}` : ""}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
         <ThemeSwitcher />
       </div>
