@@ -272,16 +272,7 @@ export default function TeamPage() {
     container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
     setActiveIndex(index);
   };
-  // Автоскрол
-  /*useEffect(() => {
-    const interval = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % team.length;
-      scrollToIndex(nextIndex);
-    }, 100000);
-    return () => clearInterval(interval);
-  }, [activeIndex]);*/
 
-  // Паралакс при скролі
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;

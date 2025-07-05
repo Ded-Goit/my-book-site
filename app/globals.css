@@ -3,11 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 @import "swiper/css";
 @import "swiper/css/navigation";
-@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 
 /* -------- THEME VARIABLES -------- */
 :root {
   --font-main: "Inter", sans-serif;
+
+  --swiper-scrollbar-border-radius: 8px !important;
+  --swiper-scrollbar-size: 6px !important;
+  --swiper-scrollbar-bottom: 8px !important;
+  --swiper-scrollbar-bg-color: rgba(255, 255, 255, 0.1) !important;
+  --swiper-scrollbar-drag-bg-color: var(--accent, #8bc34a) !important;
 
   /* Mobile First: dark theme за замовчуванням */
   --bg: #000;
@@ -32,8 +38,8 @@ html.light {
 
   --card-bg: #fff;
   --card-shadow: rgba(0, 0, 0, 0.1);
-  --pagination-bullet: #ccc;
-  --pagination-bullet-active: var(--accent, #0057b7);
+  --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1) !important;
+  --swiper-scrollbar-drag-bg-color: var(--accent, #0057b7) !important;
 }
 
 /* -------- RESET & BASE -------- */

@@ -198,7 +198,7 @@
 import Image from "next/image";
 import styles from "./insights.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Scrollbar } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useRef, useEffect } from "react";
 import type { Swiper as SwiperType } from "swiper";
@@ -429,13 +429,17 @@ export default function MethodsPage() {
         </button>
 
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Scrollbar]}
           slidesPerView={1}
-          centeredSlides={true}
+          centeredSlides
           spaceBetween={40}
-          loop={true}
-          pagination={{ clickable: true }}
+          loop
           speed={600}
+          scrollbar={{
+            draggable: true,
+            hide: false,
+            snapOnRelease: true,
+          }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
