@@ -1,13 +1,4 @@
-/*"use client";
-
-import Image from "next/image";
-import styles from "./insights.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import { useRef } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-const sections = [
+/*const sections = [
   {
     number: 1,
     title: "Set the Table",
@@ -201,91 +192,16 @@ const sections = [
       "Real progress comes when you concentrate.",
     ],
   },
-];
-
-export default function MethodsPage() {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-
-  return (
-    <section className={styles.wrapper}>
-      <h1 className={styles.heading}>Book Sections & Insights</h1>
-
-      <div className={styles.navButtons}>
-        <button ref={prevRef} className={styles.navButton}>
-          <FaChevronLeft />
-        </button>
-        <button ref={nextRef} className={styles.navButton}>
-          <FaChevronRight />
-        </button>
-      </div>
-
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={20}
-        loop={true}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-        onInit={(swiper) => {
-          if (
-            swiper.params.navigation &&
-            typeof swiper.params.navigation !== "boolean"
-          ) {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-          }
-          swiper.navigation.init();
-          swiper.navigation.update();
-        }}
-        pagination={{ clickable: true }}
-        speed={600}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1200: { slidesPerView: 3 },
-        }}
-      >
-        {sections.map((section, i) => (
-          <SwiperSlide key={i}>
-            <div className={styles.slideCard}>
-              <div className={styles.cardHeader}>
-                <h3>
-                  {section.number}. {section.title}
-                </h3>
-              </div>
-              <ul>
-                {section.insights.map((insight, j) => (
-                  <li key={j}>{insight}</li>
-                ))}
-              </ul>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <div className={styles.frogImageWrapper}>
-        <Image
-          src="/frogs/telefon_frog.webp"
-          alt="Telefon Frog"
-          width={300}
-          height={300}
-          className={styles.frogImage}
-          priority
-        />
-      </div>
-    </section>
-  );
-}*/
+];*/
 "use client";
 
 import Image from "next/image";
 import styles from "./insights.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useRef, useEffect } from "react";
+import type { Swiper as SwiperType } from "swiper";
 
 const sections = [
   {
@@ -486,6 +402,22 @@ const sections = [
 export default function MethodsPage() {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  useEffect(() => {
+    if (
+      swiperRef.current &&
+      swiperRef.current.params.navigation &&
+      typeof swiperRef.current.params.navigation !== "boolean"
+    ) {
+      swiperRef.current.params.navigation.prevEl = prevRef.current;
+      swiperRef.current.params.navigation.nextEl = nextRef.current;
+
+      swiperRef.current.navigation.destroy();
+      swiperRef.current.navigation.init();
+      swiperRef.current.navigation.update();
+    }
+  }, []);
 
   return (
     <section className={styles.wrapper}>
@@ -498,29 +430,14 @@ export default function MethodsPage() {
 
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={20}
+          slidesPerView={1}
+          centeredSlides={true}
+          spaceBetween={40}
           loop={true}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onInit={(swiper) => {
-            if (
-              swiper.params.navigation &&
-              typeof swiper.params.navigation !== "boolean"
-            ) {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
           pagination={{ clickable: true }}
           speed={600}
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
           }}
           className={styles.swiperContainer}
         >

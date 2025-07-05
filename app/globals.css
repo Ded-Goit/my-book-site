@@ -19,6 +19,8 @@
   --hover-text-dark: #1c1f23;
   --hover-scale: 1.05;
   --transition-base: 0.3s ease;
+  --pagination-bullet: #555; /* темніші смужки */
+  --pagination-bullet-active: var(--accent, #8bc34a); /* яскравий акцент */
 }
 
 /* Light theme overrides */
@@ -30,6 +32,8 @@ html.light {
 
   --card-bg: #fff;
   --card-shadow: rgba(0, 0, 0, 0.1);
+  --pagination-bullet: #ccc;
+  --pagination-bullet-active: var(--accent, #0057b7);
 }
 
 /* -------- RESET & BASE -------- */
