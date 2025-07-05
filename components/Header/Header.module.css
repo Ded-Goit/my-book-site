@@ -37,24 +37,16 @@
   opacity: 0.8;
 }
 
+.desktopNav a.activeLink {
+  background: linear-gradient(270deg, #06b6d4, #10b981);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 @media (max-width: 768px) {
   .desktopNav {
     display: none;
   }
-}
-.desktopNav a {
-  color: white;
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.3s, border-bottom 0.3s;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
-}
-
-.desktopNav a:hover {
-  opacity: 0.8;
-}
-
-.desktopNav a.activeLink {
-  border-bottom: 2px solid white;
 }
