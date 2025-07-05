@@ -20,11 +20,38 @@
   gap: 1rem;
   padding-bottom: 1rem;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  /*scrollbar-width: none;*/
+  scrollbar-width: inherit; /* замість none */
   scroll-behavior: smooth;
 }
-.teamGrid::-webkit-scrollbar {
+/*.teamGrid::-webkit-scrollbar {
   display: none;
+}*/
+.teamGrid::-webkit-scrollbar {
+  display: block; /* показуємо */
+  height: 6px; /* задаємо висоту скролбару */
+}
+.teamGrid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.teamGrid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* трек */
+  border-radius: 3px;
+}
+
+.teamGrid::-webkit-scrollbar-thumb {
+  background: var(--accent, #8bc34a); /* колір повзунка */
+  border-radius: 3px;
+}
+
+.teamGrid::-webkit-scrollbar-thumb:hover {
+  background: #6ab1d7; /* hover ефект */
+}
+
+.teamGrid {
+  scrollbar-color: var(--accent, #8bc34a) rgba(255, 255, 255, 0.1); /* для Firefox */
+  scrollbar-width: thin; /* для Firefox */
 }
 
 /* Картка (mobile) — тепер одна на екрані */
@@ -80,7 +107,7 @@
 }
 
 /* Індикатори */
-.indicators {
+/*.indicators {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
@@ -96,7 +123,7 @@
 }
 .dot.active {
   background-color: var(--accent);
-}
+}*/
 
 /* Tablet ≥768px: grid 2-3 колонки */
 @media (min-width: 768px) {
