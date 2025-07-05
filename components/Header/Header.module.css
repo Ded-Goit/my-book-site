@@ -36,13 +36,8 @@
 .desktopNav a:hover {
   opacity: 0.8;
 }
-
-.desktopNav a.activeLink {
-  background: linear-gradient(270deg, #06b6d4, #10b981);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+.navLink[aria-current="page"] {
+  color: #1abc9c;
 }
 
 @media (max-width: 768px) {

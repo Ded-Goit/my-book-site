@@ -1,3 +1,4 @@
+//components\Header\Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -32,7 +33,8 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={pathname === link.href ? `${styles.activeLink}` : ""}
+              aria-current={pathname === link.href ? "page" : undefined}
+              className={styles.navLink} // без умовного класу
             >
               {link.label}
             </Link>
